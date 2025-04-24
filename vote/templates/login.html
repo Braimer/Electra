@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="max-w-sm mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
+
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+      
+      {{ form.username.errors }}
+      <div>
+        <label for="id_username" class="block text-sm font-medium">Username</label>
+        {{ form.username }}
+      </div>
+
+      {{ form.password.errors }}
+      <div>
+        <label for="id_password" class="block text-sm font-medium">Password</label>
+        {{ form.password }}
+      </div>
+
+      <button type="submit" class="btn-class">Login</button>
+    </form>
+  </div>
+{% endblock %}
